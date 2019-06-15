@@ -615,7 +615,7 @@ function sendGenericMessagetshirt(recipientId) {
             }, 
 			{
               type: "postback",
-              title: "ค่าส่ง เเละราคาตัวอย่าง",
+              title: "ค่าส่งเเละราคา ตย",
               payload: "ค่าส่ง เเละราคาตัวอย่าง",
             }]
 			,
