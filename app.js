@@ -365,6 +365,7 @@ function receivedPostback(event) {
   // let them know it was successful
   if(payload == 'Get Started'){
       sendTextMessage(senderID, "Thank");
+	  sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg")
   } 
   else
   {
@@ -414,7 +415,7 @@ function receivedAccountLink(event) {
  * Send an image using the Send API.
  *
  */
-function sendImageMessage(recipientId) {
+function sendImageMessage(recipientId,imgurl) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -423,7 +424,7 @@ function sendImageMessage(recipientId) {
       attachment: {
         type: "image",
         payload: {
-          url: SERVER_URL + "/assets/rift.png"
+          url: imgurl
         }
       }
     }
