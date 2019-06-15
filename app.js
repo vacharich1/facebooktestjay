@@ -368,6 +368,18 @@ function receivedPostback(event) {
 	  //sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg")
 	  sendGenericMessagetshirt(senderID)
   } 
+  if(payload == 'ตารางไชส์เสื้อ'){
+      sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg");
+	  sendTextMessage(senderID, "xs  อก 34 ยาว 24\ns อก 36 ยาว 25\nm อก 38 ยาว 26\nl อก 40 ยาว 27\nxl อก 42 ยาว 28\n2xl อก 44 ยาว 29\nxxl อก 48 ยาว 30");
+	  //sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg")
+	  //sendGenericMessagetshirt(senderID)
+  } 
+   if(payload == 'ค่าส่ง เเละราคาตัวอย่าง'){
+      sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg");
+	  sendTextMessage(senderID, "ค่าส่งลงทะเบียน\n1-4 ตัว 60 บาท\n5-7 ตัว 80 บาท\n8-12 ตัว 120 บาท\n\nค่าส่ง ems\n1-4 ตัว 120 บาท\n5-7 ตัว 140 บาท\n8-12 ตัว 180 บาท\n\nค่าเสื้อ 89*4\nส่งพัสดุเเบบลงทะเบียน +60 ยอดรวม 416 บาท \n.\nส่ง ems+120 ยอดรวม 476 บาท");
+	  //sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg")
+	  //sendGenericMessagetshirt(senderID)
+  }
   else
   {
   	sendTextMessage(senderID, "Postback called");
@@ -605,8 +617,8 @@ function sendGenericMessagetshirt(recipientId) {
             }, 
 			{
               type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
+              title: "รูปเพิ่มเติม",
+              payload: "ค่าส่ง เเละราคาตัวอย่าง",
             }]
 			,
           }
