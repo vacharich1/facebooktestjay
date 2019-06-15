@@ -364,7 +364,7 @@ function receivedPostback(event) {
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
   if(payload == 'Get Started'){
-      sendTextMessage(senderID, "Thank");
+      sendTextMessage(senderID, "สีเสื้อยืดคอกลมทั้งหมด 19 สี");
 	  //sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg")
 	  sendGenericMessagetshirt(senderID)
   } 
@@ -593,12 +593,26 @@ function sendGenericMessagetshirt(recipientId) {
           template_type: "generic",
           elements: [
 		  
+
 		  {
             title: "เสื้อยืดคอกลม สี 1-4",
             subtitle: "1.เขียวเข้ม 2.กรม 3.เทาเข้ม 4.เทา",
             image_url: "http://www.suriyaknitting.com/fb1number.jpg",
-            
-          },
+            buttons: [{
+              type: "postback",
+              title: "ตารางไชส์เสื้อ",
+              payload: "ตารางไชส์เสื้อ",
+            }, 
+			{
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }]
+			,
+          }
+		  
+		  
+		  ,
             
             
             
@@ -670,7 +684,9 @@ function sendGenericMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "generic",
-          elements: [{
+          elements: [
+		  
+		  {
             title: "rift",
             subtitle: "Next-generation virtual reality",
             item_url: "https://www.oculus.com/en-us/rift/",               
@@ -687,6 +703,8 @@ function sendGenericMessage(recipientId) {
             }]
 			,
           }
+		  
+		  
 		  
 		  , {
             title: "touch",
