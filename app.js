@@ -365,7 +365,8 @@ function receivedPostback(event) {
   // let them know it was successful
   if(payload == 'Get Started'){
       sendTextMessage(senderID, "Thank");
-	  sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg")
+	  //sendImageMessage(senderID,"http://www.suriyaknitting.com/6jfourtshirtmart.jpg")
+	  sendGenericMessagetshirt(senderID)
   } 
   else
   {
@@ -579,6 +580,86 @@ function sendButtonMessage(recipientId) {
  * Send a Structured Message (Generic Message type) using the Send API.
  *
  */
+ 
+function sendGenericMessagetshirt(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [
+		  
+		  {
+            title: "เสื้อยืดคอกลม สี 1-4",
+            subtitle: "1.เขียวเข้ม 2.กรม 3.เทาเข้ม 4.เทา",
+            image_url: "http://www.suriyaknitting.com/fb1number.jpg",
+            
+          },
+            
+            
+            
+          {
+            title: "เสื้อยืดคอกลม สี 5-8",
+            subtitle: "5.ส้มอิฐ 6.เหลือง 7.เนื้อ 8.มาสตาส",
+            image_url: "http://www.suriyaknitting.com/4jfourtshirtmart.jpg",
+            
+          },
+            
+          {
+            title: "เสื้อยืดคอกลม สี 9-12",
+            subtitle: "9.เขียว 10.ฟ้าเขียว 11.ขี้ม้า 12.ดำ",
+            image_url: "http://www.suriyaknitting.com/6jfourtshirtmart.jpg",
+            
+          },
+            
+            
+          {
+            title: "เสื้อยืดคอกลม สี 13-14",
+            subtitle: "13.ม่วง 14.ชมพู",
+            image_url: "http://www.suriyaknitting.com/8jfourtshirtmart.jpg",
+            
+          },
+            
+            
+          {
+            title: "เสื้อยืดคอกลม สี 15-16",
+            subtitle: "13.ม่วง 14.ชมพู",
+            image_url: "http://www.suriyaknitting.com/8jfourtshirtmart.jpg",
+            
+          },
+          
+          {
+            title: "เสื้อยืดคอกลม สี 17",
+            subtitle: "17. น้ำตาล",
+            image_url: "http://www.suriyaknitting.com/8jfourtshirtmart.jpg",
+          },
+          
+          {
+            title: "เสื้อยืดคอกลม สี 18",
+            subtitle: "18. ขาว",
+            image_url: "http://www.suriyaknitting.com/8jfourtshirtmart.jpg",
+          },
+          
+          {
+            title: "เสื้อยืดคอกลม สี 19",
+            subtitle: "19. ฟ้าเข้ม",
+            image_url: "http://www.suriyaknitting.com/8jfourtshirtmart.jpg",
+          }
+		  
+		  ]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+
 function sendGenericMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -598,12 +679,16 @@ function sendGenericMessage(recipientId) {
               type: "web_url",
               url: "https://www.oculus.com/en-us/rift/",
               title: "Open Web URL"
-            }, {
+            }, 
+			{
               type: "postback",
               title: "Call Postback",
               payload: "Payload for first bubble",
-            }],
-          }, {
+            }]
+			,
+          }
+		  
+		  , {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
             item_url: "https://www.oculus.com/en-us/touch/",               
